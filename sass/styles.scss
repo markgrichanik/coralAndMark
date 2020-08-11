@@ -55,7 +55,7 @@ ul li {
   list-style: none;
 }
 section .header {
-  padding-bottom: 30px;
+  //padding-bottom: 30px;
 }
 .section-padding {
   padding: $section-padding;
@@ -311,7 +311,6 @@ header {
 
   a {
     color: $txt-light;
-    text-transform: uppercase;
     font-size: $nav-font-size;
 
     &.login {
@@ -792,13 +791,17 @@ Google map
 RSVP form
 ========================================================================== */
 .rsvp {
-  padding-bottom: 140px;
   .rsvp-form {
     .rsvp-btn {
       padding: 15px 0;
       border-radius: 3px;
       width: 100%;
       font-size: 20px;
+      margin-top: 10px;
+    }
+    #otherRestriction {
+      border: none;
+      border-bottom: 1px solid;
     }
     .form-input-group {
       width: 100%;
@@ -831,6 +834,29 @@ RSVP form
         top: 50%;
         transform: translateY(-50%);
         margin-right: 20px;
+      }
+      select {
+        margin-right: 68px;
+        height: 100%;
+        -moz-border-radius: 6px;
+        -webkit-border-radius: 6px;
+        border-radius: 6px;
+        border: none;
+      }
+    option {
+      padding-right:0;
+    }
+      select::-webkit-input-placeholder {
+        color: $form-placeholder;
+      }
+      select:-moz-placeholder {
+        color: $form-placeholder;
+      }
+      select::-moz-placeholder {
+        color: $form-placeholder;
+      }
+      select:-ms-input-placeholder {
+        color: $form-placeholder;
       }
       input {
         padding-right: 68px;

@@ -45,14 +45,14 @@
                 <div class="header-nav">
                     <nav>
                         <ul class="primary-nav">
-                            <li style="direction: rtl"><a href="#intro">איך הכרנו?</a></li>
-                            <li><a href="#events">האירוע</a></li>
-                            <li><a href="#instagram">Instagram</a></li>
+<!--                            <li style="direction: rtl"><a href="#intro">איך הכרנו?</a></li>-->
+                            <li><a href="#events">החתונה שלנו</a></li>
+                            <li><a href="#instagram">Instagram <i class="fa fa-instagram"></i> </a></li>
                             <li><a href="#eng-pics">תמונות</a></li>
-                            <li class="hidden-sm hidden-xs"><a href="#video-bg">Zoom</a></li>
+                            <li class="hidden-sm hidden-xs"><a href="#video-bg">Zoom חופה ב</a></li>
                         </ul>
                         <ul class="member-actions">
-                            <li><a href="#map" class="login">לאירוע</a></li>
+                            <li><a href="#map" class="login">מיקום החתונה שלנו</a></li>
                             <li><a href="#rsvp" class="btn-white btn-small">אישור הגעה</a></li>
                         </ul>
                     </nav>
@@ -74,7 +74,7 @@
         <div class="row">
             <div class="col-sm-4 hidden-xs"></div>
             <div class="col-sm-4 hidden-xs text-center"><a href="#rsvp"
-                                                           class="btn btn-accent btn-large rsvp-btn">אשר</a></div>
+                                                           class="btn btn-accent btn-large rsvp-btn">לאישור הגעה לחץ כאן</a></div>
             <div class="col-sm-4 hidden-xs"></div>
         </div>
     </div>
@@ -101,20 +101,22 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6 col-md-offset-3">
-                <h3 style="direction: rtl">אז למה מחכים?</h3>
-                <p>נודה לכם מאד אם תאשרו הגעה עד ה23.08.2020</p>
+                <h3 style="direction: rtl">מלאו את הפרטים לאישור הגעה</h3>
+                <p>גם אם לא תוכלו להגיע נשמח שתמלאו את הפרטים ותציינו שלא מגיעים</p>
                 <form id="rsvp-form" class="gform rsvp-form"
                       action=""
                       method="POST">
-                    <div class="row">
+                    <div class="row" style="direction: rtl">
                         <div class="col-md-6 col-sm-6">
-                            <div class="form-input-group" style="direction: rtl">
-                                <i class="fa fa-user" ></i> <input type="text" name="name" class="" id="name"
-                                                                 placeholder="שם מלא"
-                                                                 required>
-
-                            </div>
+                            <input type="radio" id="coming" name="isComing" value="yes" required>
+                            <label for="coming"> מגיע</label>
                         </div>
+                        <div class="col-md-6 col-sm-6">
+                            <input type="radio" id="notComing" name="isComing" value="no">
+                            <label for="notComing">לא מגיע</label>
+                        </div>
+                    </div>
+                    <div class="row">
                         <div class="col-md-6 col-sm-6">
                             <div class="form-input-group"  style="direction: rtl">
                                 <i class="fa fa-phone"></i><input type="text" pattern="\d*" name="phone" class="" id="phone"
@@ -123,33 +125,94 @@
                                                                   required>
                             </div>
                         </div>
-                    </div>
-                    <div class="row">
                         <div class="col-md-6 col-sm-6">
-                            <div class="form-input-group"  style="direction: rtl">
-                                <i class="fa fa-users"></i><input type="number" name="numOfPeople" class="" min="0"
-                                                                  max="4"
-                                                                  id="numOfPeople"
-                                                                  placeholder="מספר אנשים"
-                                                                  required>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-sm-6">
-                            <div class="form-input-group"  style="direction: rtl">
-                                <i class="fa fa-bus"></i><input type="number" name="bus" class="" min="0"
-                                                                max="2"
-                                                                id="bus"
-                                                                placeholder="מספר אנשים שצריכים הסעה"
-                                                                required>
+                            <div class="form-input-group" style="direction: rtl">
+                                <i class="fa fa-user" ></i> <input type="text" name="name" class="" id="name"
+                                                                 placeholder="שם מלא"
+                                                                 required>
 
                             </div>
                         </div>
                     </div>
                     <div class="row">
+                        <div class="col-md-6 col-sm-6">
+                            <div class="form-input-group"  style="direction: rtl">
+                                <i class="fa fa-bus"></i>
+                                <select name="bus" id="bus" required>
+                                    <option hidden value="" selected disabled>מספר אנשים שצריכים הסעה</option>
+                                    <option value="0">0</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                </select>
+<!--                                <input type="number" name="bus" class="" min="0"-->
+<!--                                                                max="2"-->
+<!--                                                                id="bus"-->
+<!--                                                                placeholder="מספר אנשים שצריכים הסעה"-->
+<!--                                                                required>-->
+
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-6">
+                            <div class="form-input-group"  style="direction: rtl">
+                                <i class="fa fa-users"></i>
+                                <select name="numOfPeople" id="numOfPeople" required>
+                                    <option hidden value="" selected disabled>מספר אנשים</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                </select>
+                                <!--                                <input type="number" name="numOfPeople" class="" min="0"-->
+                                <!--                                                                  max="4"-->
+                                <!--                                                                  id="numOfPeople"-->
+                                <!--                                                                  placeholder="מספר אנשים"-->
+                                <!--                                                                  required>-->
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="row" style="direction: rtl; padding-top:15px">
+                        <div class="col-md-2 col-sm-2"><strong>רגישויות</strong></div>
+                        <div class="col-md-2 col-sm-2">
+                            <input type="text" pattern="\d*" name="otherRestriction" class="" id="otherRestriction"
+                                   maxlength="50"
+                                   placeholder="אחר"
+                            >
+                        </div>
+                        <div class="col-md-4 col-sm-4">
+                            <input type="checkbox" id="gluten" name="gluten" value="gluten">
+                            <label for="gluten">גלוטן</label>
+                        </div>
+                        <div class="col-md-4 col-sm-4">
+                            <input type="checkbox" id="veg" name="veg" value="yes">
+                            <label for="veg"> צמחוני</label>
+                        </div>
+
+                    </div>
+
+
+                    <div class="row">
                         <div class="col-md-12" id="alert-wrapper"></div>
                     </div>
+                    <div class="row" style="direction: rtl; float:right; padding-right: 15px; padding-top: 10px">
+                        *ההסעות יצאו מבאר שבע בשעה X ויחזרו לבאר שבע בסיום האירוע
+                    </div>
+
                     <button class="btn-fill rsvp-btn" style="direction: rtl" id="approve">
-                        אשרו אותי בהתרגשות!
+                       שליחה
                     </button>
                 </form>
             </div>
@@ -161,55 +224,62 @@
         <div class="row">
             <div class="col-md-12 text-center">
                 <h3>עומדים להתחתן</h3>
-                <p style="direction: rtl">בתאריך 7 לספטמבר 2020 ורוצים שתהיה חלק מהחגיגה!</p>
+                <p style="direction: rtl">בתאריך 7 לספטמבר 2020 ורוצים שתהיו חלק מהחגיגה!</p>
                 <div class="share-bar"></div>
             </div>
         </div>
     </div>
 </section>
 
-<section id="intro">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12 text-center">
-                <h3 class="header">איך הכרנו?</h3>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-3 hidden-sm hidden-xs"><img src="img/DSD_0214.png" class="wp1"></div>
-            <div class="col-md-6">
-                <p style="direction: rtl">
-                    ראיתי את קורל לראשונה בינואר 2017, כבר מהמבט הראשון הרגשתי שיש פה משהו אבל הייתי לחוץ וביישן מכדי לעשות משהו.
-                    היינו אצל דיאנה קרובת משפחה שלי בארוחת שישי ואחרי הארוחה שאלתי אותה לגבי קורל..
-                    אחרי שקיבלתי אישור שלחתי לה הודעה בפייסבוק וכבר למחרת יצאנו לדייט:) ומשם הכל התחיל
-                </p>
-            </div>
-            <div class="col-md-3 hidden-sm hidden-xs"><img src="img/IMG_2317.png" class="wp2"></div>
-        </div>
-        <div class="row">
-            <div class="col-sm-4 col-sm-push-2 col-xs-6 hidden-md hidden-lg"><img src="img/DSD_0214.png" class="wp8"></div>
-            <div class="col-sm-4 col-sm-push-2 col-xs-6 hidden-md hidden-lg"><img src="img/IMG_2317.png" class="wp9"></div>
-        </div>
-    </div>
-</section>
+<!--<section id="intro">-->
+<!--    <div class="container">-->
+<!--        <div class="row">-->
+<!--            <div class="col-md-12 text-center">-->
+<!--                <h3 class="header">איך הכרנו?</h3>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="row">-->
+<!--            <div class="col-md-3 hidden-sm hidden-xs"><img src="img/DSD_0214.png" class="wp1"></div>-->
+<!--            <div class="col-md-6">-->
+<!--                <p style="direction: rtl">-->
+<!--                    ראיתי את קורל לראשונה בינואר 2017, כבר מהמבט הראשון הרגשתי שיש פה משהו אבל הייתי לחוץ וביישן מכדי לעשות משהו.-->
+<!--                    היינו אצל דיאנה קרובת משפחה שלי בארוחת שישי ואחרי הארוחה שאלתי אותה לגבי קורל..-->
+<!--                    אחרי שקיבלתי אישור שלחתי לה הודעה בפייסבוק וכבר למחרת יצאנו לדייט:) ומשם הכל התחיל-->
+<!--                </p>-->
+<!--            </div>-->
+<!--            <div class="col-md-3 hidden-sm hidden-xs"><img src="img/IMG_2317.png" class="wp2"></div>-->
+<!--        </div>-->
+<!--        <div class="row">-->
+<!--            <div class="col-sm-4 col-sm-push-2 col-xs-6 hidden-md hidden-lg"><img src="img/DSD_0214.png" class="wp8"></div>-->
+<!--            <div class="col-sm-4 col-sm-push-2 col-xs-6 hidden-md hidden-lg"><img src="img/IMG_2317.png" class="wp9"></div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</section>-->
 
 <section class="events section-padding" id="events">
-    <div class="container">
+    <div class="container" style="text-align: center">
         <div class="row" style="direction: rtl">
             <div class="col-md-12">
-                <h3 class="header">האירוע - חתונה</h3>
+                <h3 class="header">החתונה שלנו</h3>
+                <p><strong>מתרגשים להזמינכם לחגוג איתנו את יום נישואינו</strong></p>
             </div>
         </div>
         <div class="row">
             <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="wp3" style="direction: rtl">
                     <p><strong>07.09.2020</strong></p>
-                    <h5>אשקלון, מקום בים <span class="time">18:00</span></h5>
-                    <p style="direction: rtl">
-                        מדובר בחתונת שקיעה לכן הזמנים באמת מאד חשובים ולא נוכל לחכות..
-                        בגלל הקורונה המצב לא מאפשר ריקודים. תעזרו לנו לשמוח גם בלעדיהם!
-                        יהיו הסעות מבאר שבע
-                    </p>
+                    <h5>אשקלון, מקום בים </h5>
+                    <h5><span class="time">קבלת פנים בשעה 18:00</span></h5>
+                    <h5><span class="time">חופת <strong>שקיעה</strong> בשעה 18:30</span></h5>
+                    <div style="direction: rtl; padding-bottom:5px">
+                        מדובר בחתונת שקיעה ולכן עמידה בזמנים חשובה לנו מאד.
+                    </div>
+                    <div style="direction: rtl; padding-bottom:5px">
+                        לנוכח המצב הנוכחי ובהתאם להנחיות משרד הבריאות לא יהיו ריקודים בחתונה.
+                    </div>
+                    <div style="direction: rtl; padding-bottom:5px">
+                        נסיים את הטקס בארוחה חגיגית, סומכים עליכם שתעזרו לנו לשמוח גם בלי הריקודים!
+                    </div>
                 </div>
             </div>
 
@@ -378,7 +448,7 @@
 <section id="map" class="section-padding">
     <div class="text-center" style="direction: rtl">
         <h3>איך מגיעים לשם?</h3>
-        <p>הרבה יותר קל ממה שאתה חושב!</p>
+        <p>הרבה יותר קל ממה שאתם חושבים! יש הסעות מבאר שבע אבל הנה גם מפה</p>
     </div>
     <div id="map-canvas"></div>
     <div id="map-content-wrapper" class="container pointer-events-none">
@@ -415,7 +485,8 @@
         <div class="row">
             <div class="col-sm-12 text-center content">
                 <span class="to-top-wrapper"><a href="#top" class="to-top"><i class="fa fa-angle-up"></i></a></span>
-                <p style="direction: rtl">נבנה עם המון אהבה בינינו<span class="fa fa-heart pulse2"></span></p>
+                <p style="direction: rtl">האתר נבנה בעזרת אהבתנו<span class="fa fa-heart pulse2"></span></p>
+                <p style="direction: rtl">קרדיט לצלם המוכשר שלנו <a target="_blank" href="https://www.facebook.com/yissacharitamar">איתמר יששכר</a><span class="fa fa-heart pulse2"></span></p>
             </div>
         </div>
     </div>
