@@ -72,13 +72,12 @@
                 <div class="logo"><a href="#"><img src="img/logo.png" alt="Logo"></a></div>
                 <div class="header-nav">
                     <nav>
-                        <ul class="primary-nav">
+                        <ul class="primary-nav" style="direction: rtl">
 <!--                            <li style="direction: rtl"><a href="#intro">איך הכרנו?</a></li>-->
-                            <li><a href="#instagram">Instagram <i class="fa fa-instagram"></i> </a></li>
-                            <li><a href="#eng-pics">תמונות</a></li>
-                            <li><a href="#zoom" >Zoom חופה ב</a></li>
-
                             <li><a href="#events">החתונה שלנו</a></li>
+                            <li style="direction: ltr"><a href="#zoom" >Zoom חופה ב</a></li>
+                            <li><a href="#eng-pics">תמונות</a></li>
+                            <li style="direction: rtl; padding-right: 25px;"><a href="#instagram">Instagram <i class="fa fa-instagram"></i> </a></li>
 
 
 
@@ -104,10 +103,10 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-sm-4 hidden-xs"></div>
-            <div class="col-sm-4 hidden-xs text-center"><a href="#rsvp"
+            <div class="col-sm-4 "></div>
+            <div class="col-sm-4  text-center"><a href="#rsvp"
                                                            class="btn btn-accent btn-large rsvp-btn">לאישור הגעה לחץ כאן</a></div>
-            <div class="col-sm-4 hidden-xs"></div>
+            <div class="col-sm-4 "></div>
         </div>
     </div>
     <div class="down-arrow floating-arrow"><a href="#invitation"><i class="fa fa-angle-down"></i></a></div>
@@ -133,9 +132,9 @@
 
     <div class="container" style="padding-top:15px">
         <div class="row">
-            <div class="col-md-6 col-md-offset-3 col-sm-offset-0">
+            <div class="col-md-12">
                 <h3 style="direction: rtl">מלאו את הפרטים לאישור הגעה</h3>
-                <p>גם אם לא תוכלו להגיע נשמח שתמלאו את הפרטים ותציינו שלא מגיעים</p>
+                <p><h4 style="white-space: pre-line">גם אם לא תוכלו להגיע נשמח שתמלאו את הפרטים ותציינו שלא מגיעים</h4></p>
                 <form id="rsvp-form" class="gform rsvp-form"
                       action=""
                       method="POST">
@@ -176,7 +175,7 @@
                                 <i class="fa fa-users"></i>
                                 <span style="padding-right: 68px;">
                                     <select name="numOfPeople" id="numOfPeople" required>
-                                    <option hidden value="" selected disabled>מספר אנשים</option>
+                                    <option hidden value="" selected disabled>כמה מגיעים?</option>
                                     <option value="0">0</option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
@@ -201,7 +200,7 @@
                             <div class="form-input-group"  style="direction: rtl">
                                 <i class="fa fa-bus"></i>
                                 <span style="padding-right: 68px;"><select name="bus" id="bus" required disabled>
-                                    <option hidden value="" selected disabled>אנשים שצריכים הסעה</option>
+                                    <option hidden value="" selected disabled>כמה בהסעה?</option>
                                 </select>
                                     </span>
 <!--                                <input type="number" name="bus" class="" min="0"-->
@@ -241,8 +240,8 @@
                     <div class="row">
                         <div class="col-md-12" id="alert-wrapper"></div>
                     </div>
-                    <div class="row" style="direction: rtl; float:right; padding-right: 15px; padding-top: 10px">
-                        *ההסעות יצאו מבאר שבע בשעה 17:00 ויחזרו לבאר שבע בסיום האירוע
+                    <div class="row" style="direction: rtl; float:right; padding-right: 15px; padding-top: 10px; white-space: pre-line">
+                        *ההסעות יצאו מבאר שבע בשעה 17:00 ויחזרו לבאר שבע בסיום האירוע. בהמשך תשלח הודעה לנרשמים להסעהץ
                     </div>
 
                     <button class="btn-fill rsvp-btn" style="direction: rtl" id="approve">
@@ -303,11 +302,11 @@
             <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="wp3" style="direction: rtl">
                     <h4><strong>07.09.2020</strong></h4>
-                    <h4>אשקלון, מקום בים </h4>
-                    <h4><span>קבלת פנים בשעה 18:00</span></h4>
-                    <h4><span class="">חופת <strong>שקיעה</strong> בשעה 18:30</span></h4>
+                    <h4 style="font-weight: bold">אשקלון, מקום בים </h4>
+                    <h4 style="font-weight: bold"><span>קבלת פנים בשעה 18:00</span></h4>
+                    <h4 style="font-weight: bold"><span class="">חופת <span style="text-decoration: underline; font-size: larger">שקיעה</span> בשעה 18:30</span></h4>
                     <div style="direction: rtl; padding-bottom:5px; padding-top: 5px">
-                        <h4>מדובר בחתונת שקיעה ולכן עמידה בזמנים חשובה לנו מאד.</h4>
+                        <h4>מדובר בחתונת שקיעה ולכן עמידה בזמנים חשובה לנו מאד</h4>
                     </div>
                     <div style="direction: rtl; padding-bottom:5px">
                         <h4 class="dance">לנוכח המצב הנוכחי ובהתאם להנחיות משרד הבריאות <span>לא יהיו ריקודים בחתונה</span></h4>
@@ -372,7 +371,13 @@
 
 </section>
 <section id="zoom" class="section-padding">
-    <p><h4  style="direction: rtl; text-align: center">קישור לZOOM יעלה לאתר לקראת טקס החתונה</h4></p>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h3 class="header" style="direction: rtl">קישור לZOOM יעלה לאתר לקראת טקס החתונה</h3>
+            </div>
+        </div>
+    </div>
 <!--    <iframe id="mainIframe" src="https://zoom.us/wc/9343035217/join?prefer=1&un=dG9tbXk=" allow="microphone;camera"  sandbox="allow-forms allow-scripts allow-same-origin allow-top-navigation"  style="height: 500px; width: 100%;"  frameborder="0"></iframe>-->
 
     <!--    <iframe width="100%" height="500" src="https://zoom.us/wc/949317639/join?prefer=1&un=R3Vlc3Q=" sandbox="allow-forms allow-scripts" allow="microphone; camera; allowfullscreen"></iframe>-->
