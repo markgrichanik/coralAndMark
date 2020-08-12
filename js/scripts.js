@@ -185,7 +185,6 @@ $(document).ready(function () {
     /********************** People selection ***********/
 
     $('#numOfPeople').on("change", function() {
-        console.log($('#numOfPeople').val());
         if($('#numOfPeople').val() !== 0){
             $('#bus').prop("disabled", false);
             $('#bus').empty();

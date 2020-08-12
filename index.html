@@ -106,7 +106,7 @@
 
     <div class="container" style="padding-top:15px">
         <div class="row">
-            <div class="col-md-6 col-md-offset-3">
+            <div class="col-md-6 col-md-offset-3 col-sm-offset-0">
                 <h3 style="direction: rtl">מלאו את הפרטים לאישור הגעה</h3>
                 <p>גם אם לא תוכלו להגיע נשמח שתמלאו את הפרטים ותציינו שלא מגיעים</p>
                 <form id="rsvp-form" class="gform rsvp-form"
@@ -123,7 +123,17 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-md-6 col-sm-6">
+
+                        <div class="col-md-6 col-sm-6 col-xs-12 col-sm-push-6"  >
+                            <div class="form-input-group"  style="direction: rtl">
+                                <i class="fa fa-user" ></i> <input type="text" name="name" class="" id="name"
+                                                                 placeholder="שם מלא"
+                                                                 required>
+
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-sm-6 col-xs-12 col-sm-pull-6">
                             <div class="form-input-group"  style="direction: rtl">
                                 <i class="fa fa-phone"></i><input type="text" pattern="\d*" name="phone" class="" id="phone"
                                                                   maxlength="10"
@@ -131,32 +141,10 @@
                                                                   required>
                             </div>
                         </div>
-                        <div class="col-md-6 col-sm-6">
-                            <div class="form-input-group" style="direction: rtl">
-                                <i class="fa fa-user" ></i> <input type="text" name="name" class="" id="name"
-                                                                 placeholder="שם מלא"
-                                                                 required>
 
-                            </div>
-                        </div>
                     </div>
                     <div class="row">
-                        <div class="col-md-6 col-sm-6">
-                            <div class="form-input-group"  style="direction: rtl">
-                                <i class="fa fa-bus"></i>
-                                <span style="padding-right: 68px;"><select name="bus" id="bus" required disabled>
-                                    <option hidden value="" selected disabled>אנשים שצריכים הסעה</option>
-                                </select>
-                                    </span>
-<!--                                <input type="number" name="bus" class="" min="0"-->
-<!--                                                                max="2"-->
-<!--                                                                id="bus"-->
-<!--                                                                placeholder="מספר אנשים שצריכים הסעה"-->
-<!--                                                                required>-->
-
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-sm-6">
+                        <div class="col-md-6 col-sm-6 col-xs-12  col-sm-push-6">
                             <div class="form-input-group"  style="direction: rtl">
                                 <i class="fa fa-users"></i>
                                 <span style="padding-right: 68px;">
@@ -180,6 +168,24 @@
                                 <!--                                                                  required>-->
                             </div>
                         </div>
+<!--                        <div class="clearfix visible-xs-block"></div>-->
+
+                        <div class="col-md-6 col-sm-6 col-xs-12 col-sm-pull-6">
+                            <div class="form-input-group"  style="direction: rtl">
+                                <i class="fa fa-bus"></i>
+                                <span style="padding-right: 68px;"><select name="bus" id="bus" required disabled>
+                                    <option hidden value="" selected disabled>אנשים שצריכים הסעה</option>
+                                </select>
+                                    </span>
+<!--                                <input type="number" name="bus" class="" min="0"-->
+<!--                                                                max="2"-->
+<!--                                                                id="bus"-->
+<!--                                                                placeholder="מספר אנשים שצריכים הסעה"-->
+<!--                                                                required>-->
+
+                            </div>
+                        </div>
+
                     </div>
 
 
@@ -445,7 +451,7 @@
 </section>
 <section id="video-bg">
     <div id="bgndVideo" class="player"
-         data-property="{videoURL:'https://youtu.be/uVCbLp7-zQM',containment:'#video-bg',autoPlay:true, mute:true, showControls:false, opacity:1}">
+         data-property="{videoURL:'https://youtu.be/uVCbLp7-zQM',containment:'#video-bg',autoPlay:true, mute:true, useOnMobile:true, showControls:false, opacity:1}">
     </div>
     <div id="video-content">
         <h5>אשקלון</h5>
