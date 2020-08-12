@@ -803,6 +803,23 @@ RSVP form
       border: none;
       border-bottom: 1px solid;
     }
+
+
+    input::-webkit-input-placeholder {
+      color: $form-placeholder;
+    }
+    input::-moz-placeholder {
+      color: $form-placeholder;
+    }
+    input::-moz-placeholder {
+      color: $form-placeholder;
+    }
+    input::-ms-input-placeholder {
+      color: $form-placeholder;
+    }
+    input::placeholder {
+      color: $form-placeholder
+    }
     .form-input-group {
       width: 100%;
       height: 55px;
@@ -842,21 +859,23 @@ RSVP form
         -webkit-border-radius: 6px;
         border-radius: 6px;
         border: none;
+        color: $form-placeholder;
+        background-color: transparent;
       }
 
       select::-webkit-input-placeholder {
         color: $form-placeholder;
       }
-      select:-moz-placeholder {
+      select::-moz-placeholder {
         color: $form-placeholder;
       }
       select::-moz-placeholder {
         color: $form-placeholder;
       }
-      select:-ms-input-placeholder {
+      select::-ms-input-placeholder {
         color: $form-placeholder;
       }
-      select: placeholder {
+      select::placeholder {
         color: $form-placeholder;
       }
       input {
@@ -872,14 +891,17 @@ RSVP form
       input::-webkit-input-placeholder {
         color: $form-placeholder;
       }
-      input:-moz-placeholder {
+      input::-moz-placeholder {
         color: $form-placeholder;
       }
       input::-moz-placeholder {
         color: $form-placeholder;
       }
-      input:-ms-input-placeholder {
+      input::-ms-input-placeholder {
         color: $form-placeholder;
+      }
+      input::placeholder {
+        color: $form-placeholder
       }
     }
   }
