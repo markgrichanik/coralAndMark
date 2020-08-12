@@ -328,7 +328,7 @@ header {
     padding: 0;
 
     li {
-      display: inline;
+      display: inline-block;
 
       a {
         color: $txt-light;
@@ -345,7 +345,7 @@ header {
   }
   ul.member-actions {
     li {
-      display: inline;
+      display: inline-block;
 
       a {
         color: $txt-light;
@@ -836,16 +836,14 @@ RSVP form
         margin-right: 20px;
       }
       select {
-        margin-right: 68px;
+        //padding-right: 68px;
         height: 100%;
         -moz-border-radius: 6px;
         -webkit-border-radius: 6px;
         border-radius: 6px;
         border: none;
       }
-    option {
-      padding-right:0;
-    }
+
       select::-webkit-input-placeholder {
         color: $form-placeholder;
       }
@@ -856,6 +854,9 @@ RSVP form
         color: $form-placeholder;
       }
       select:-ms-input-placeholder {
+        color: $form-placeholder;
+      }
+      select: placeholder {
         color: $form-placeholder;
       }
       input {
