@@ -182,8 +182,50 @@ $(document).ready(function () {
     });
 
     $('#add-to-cal').html(myCalendar);
+    /********************** People selection ***********/
+
+    $('#numOfPeople').on("change", function() {
+        console.log($('#numOfPeople').val());
+        if($('#numOfPeople').val() !== 0){
+            $('#bus').prop("disabled", false);
+            $('#bus').empty();
+            $('#bus').append('<option hidden selected disabled value="">אנשים שצריכים הסעה</option>');
+            for (var i = 0; i <= $('#numOfPeople').val(); i++) {
+                $('#bus').append('<option value="' + i + '">' + i + '</option>');
+            }
+        } else {
+            $('#bus').prop("disabled", true);
+        }
+
+    })
 
 
+    /********************** Radio selection ***********/
+    var radios = document.querySelectorAll('input[type=radio][name="isComing"]');
+
+    function changeHandler(event) {
+        if ( this.value === 'no' ) {
+            $('#numOfPeople').prop("disabled", true);
+            $('#bus').prop("disabled", true);
+            $('#gluten').prop("disabled", true);
+            $('#veg').prop("disabled", true);
+            $('#otherRestriction').prop("disabled", true);
+            $('#numOfPeople').val("0");
+            $('#bus').val("0");
+        } else {
+            $('#numOfPeople').prop("disabled", false);
+            $('#bus').prop("disabled", true);
+            $('#gluten').prop("disabled", false);
+            $('#veg').prop("disabled", false);
+            $('#otherRestriction').prop("disabled", false);
+            $('#numOfPeople').val("");
+            $('#bus').val("");
+        }
+    }
+
+    Array.prototype.forEach.call(radios, function(radio) {
+        radio.addEventListener('change', changeHandler);
+    });
     /********************** RSVP **********************/
     $('#rsvp-form').on('submit', function (e) {
         e.preventDefault();
@@ -194,6 +236,9 @@ $(document).ready(function () {
         $('#phone').prop("disabled", true);
         $('#numOfPeople').prop("disabled", true);
         $('#bus').prop("disabled", true);
+        $('#gluten').prop("disabled", true);
+        $('#veg').prop("disabled", true);
+        $('#otherRestriction').prop("disabled", true);
         $('#approve').prop("disabled", true);
             $.post('https://script.google.com/macros/s/AKfycbxDVil7Pnnat_k8gJ7nd6JvH1xb2e5BbZZoLRqJtwHtHpvh-6w/exec', data)
                 .done(function (data) {
@@ -202,14 +247,21 @@ $(document).ready(function () {
                     $('#phone').prop("disabled", false);
                     $('#numOfPeople').prop("disabled", false);
                     $('#bus').prop("disabled", false);
+                    $('#gluten').prop("disabled", false);
+                    $('#veg').prop("disabled", false);
+                    $('#otherRestriction').prop("disabled", false);
                     $('#approve').prop("disabled", false);
                     if (data.result === "error") {
                         $('#alert-wrapper').html(alert_markup('danger', data.message));
                     } else {
                         $('#name').val("");
                         $('#phone').val("");
-                        $('#numOfPeople').val("מספר אנשים");
+                        $('#numOfPeople').val("");
                         $('#bus').val("");
+                        $('input[type="radio"]').prop('checked', false);
+                        $('#otherRestriction').val("");
+                        $('#gluten').prop("checked", false);
+                        $('#veg').prop("checked", false);
                         $('#alert-wrapper').html('');
                         $('#rsvp-modal').modal('show');
                     }
@@ -219,6 +271,9 @@ $(document).ready(function () {
                     $('#phone').prop("disabled", false);
                     $('#numOfPeople').prop("disabled", false);
                     $('#bus').prop("disabled", false);
+                    $('#gluten').prop("disabled", false);
+                    $('#veg').prop("disabled", false);
+                    $('#otherRestriction').prop("disabled", false);
                     $('#approve').prop("disabled", false);
                     console.log(data);
                     $('#alert-wrapper').html(alert_markup('danger', '<strong style="direction: rtl">מצטערים!</strong> קרתה שגיאה '));
@@ -242,6 +297,9 @@ function initMap() {
     var marker = new google.maps.Marker({
         position: location,
         map: map
+    });
+    marker.addListener("click", function () {
+        window.open('https://www.waze.com/ul?place=ChIJWxZpyzWcAhURwrgaRY3fll8&ll=31.68627190%2C34.56201210&navigate=yes', '_blank');
     });
 }
 
