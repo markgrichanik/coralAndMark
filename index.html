@@ -75,12 +75,9 @@
                         <ul class="primary-nav" style="direction: rtl">
 <!--                            <li style="direction: rtl"><a href="#intro">איך הכרנו?</a></li>-->
                             <li><a href="#events">החתונה שלנו</a></li>
-                            <li style="direction: ltr"><a href="#zoom" >Zoom חופה ב</a></li>
+                            <li style="direction: ltr"><a href="#zoom" ><i class="fa fa-video-camera"></i> Zoom חופה ב</a></li>
                             <li><a href="#eng-pics">תמונות</a></li>
                             <li style="direction: rtl; padding-right: 25px;"><a href="#instagram">Instagram <i class="fa fa-instagram"></i> </a></li>
-
-
-
                         </ul>
                         <ul class="member-actions">
                             <li><a href="#map" class="login">מיקום החתונה שלנו</a></li>
@@ -134,8 +131,11 @@
         <div class="row">
             <div class="col-md-12">
                 <h3 style="direction: rtl">מלאו את הפרטים לאישור הגעה</h3>
-                <p><h4 style="white-space: pre-line">גם אם לא תוכלו להגיע נשמח שתמלאו את הפרטים ותציינו שלא מגיעים</h4></p>
-                <p><h4 style="white-space: pre-line">בהתאם להנחיות לא יהיו ריקודים ברחבה</h4></p>
+                <p>
+                <h4 style="white-space: pre-line">גם אם לא תוכלו להגיע נשמח שתמלאו את הפרטים ותציינו שלא מגיעים</h4>
+                <h4 style="white-space: pre-line">בהתאם להנחיות לא יהיו ריקודים ברחבה</h4>
+                </p>
+
                 <form id="rsvp-form" class="gform rsvp-form"
                       action=""
                       method="POST">
@@ -173,7 +173,7 @@
                     <div class="row">
                         <div class="col-md-6 col-sm-6 col-xs-12  col-sm-push-6">
                             <div class="form-input-group"  style="direction: rtl">
-                                <i class="fa fa-users"></i>
+                                <i id="faUsers" class="fa fa-users"></i>
                                 <span style="padding-right: 68px;">
                                     <select name="numOfPeople" id="numOfPeople" required>
                                     <option hidden value="" selected disabled>כמה מגיעים?</option>
@@ -199,7 +199,7 @@
 
                         <div class="col-md-6 col-sm-6 col-xs-12 col-sm-pull-6">
                             <div class="form-input-group"  style="direction: rtl">
-                                <i class="fa fa-bus"></i>
+                                <i id="faBus" class="fa fa-bus"></i>
                                 <span style="padding-right: 68px;"><select name="bus" id="bus" required disabled>
                                     <option hidden value="" selected disabled>כמה בהסעה?</option>
                                 </select>
@@ -217,15 +217,19 @@
 
 
                     <div class="row" style="direction: rtl; padding-top:15px; display: flex; justify-content: space-around">
-                        <div class="col-md-2 col-sm-2"><strong>רגישויות</strong></div>
+                        <div class="col-md-2 col-sm-2" id="senstives"><strong>רגישויות</strong></div>
 
                         <div class="col-md-4 col-sm-4">
                             <input type="checkbox" id="gluten" name="gluten" value="yes" style="vertical-align: text-top">
-                            <label for="gluten">גלוטן</label>
+                            <label for="gluten" id="glutenTitle">גלוטן</label>
                         </div>
                         <div class="col-md-4 col-sm-4">
                             <input type="checkbox" id="veg" name="veg" value="yes" style="vertical-align: text-top">
-                            <label for="veg"> צמחוני</label>
+                            <label for="veg" id="vegTitle"> צמחוני</label>
+                        </div>
+                        <div class="col-md-4 col-sm-4">
+                            <input type="checkbox" id="veg2" name="veg2" value="yes" style="vertical-align: text-top">
+                            <label for="veg" id="vegTitle2"> טבעוני</label>
                         </div>
                     <div class="col-md-4 col-sm-4">
                         <input type="text" pattern="[א-ת|\s]+" name="otherRestriction" class="" id="otherRestriction"
@@ -313,7 +317,7 @@
                         <h4 class="dance">לנוכח המצב הנוכחי ובהתאם להנחיות משרד הבריאות <span>לא יהיו ריקודים בחתונה</span></h4>
                     </div>
                     <div style="direction: rtl; padding-bottom:5px">
-                      <h4 class="dance">נסיים את הטקס בארוחה חגיגית,<span>סומכים עליכם שתעזרו לנו לשמוח <span> גם בלי הריקודים!</span></span></h4>
+                      <h4 class="dance">נסיים את הטקס בארוחה חגיגית, <span>סומכים עליכם שתעזרו לנו לשמוח <span> גם בלי הריקודים!</span></span></h4>
                     </div>
                     <div style="direction: rtl; padding-bottom:5px">
                         <h4 class="dance">נא להגיע עם מסכה בהתאם להנחיות</h4>

@@ -183,10 +183,11 @@ $(document).ready(function () {
 
     $('#add-to-cal').html(myCalendar);
     /********************** People selection ***********/
-
+    $('#faBus').css("opacity", "0.5");
     $('#numOfPeople').on("change", function() {
         if($('#numOfPeople').val() !== 0){
             $('#bus').prop("disabled", false);
+            $('#faBus').css("opacity", "1");
             $('#bus').empty();
             $('#bus').append('<option hidden selected disabled value="">אנשים שצריכים הסעה</option>');
             for (var i = 0; i <= $('#numOfPeople').val(); i++) {
@@ -194,6 +195,9 @@ $(document).ready(function () {
             }
         } else {
             $('#bus').prop("disabled", true);
+            $('#bus').empty();
+            $('#bus').append('<option value="' + 0 + '">' + 0 + '</option>');
+            $('#faBus').css("opacity", "0.5");
         }
 
     })
@@ -208,15 +212,37 @@ $(document).ready(function () {
             $('#bus').prop("disabled", true);
             $('#gluten').prop("disabled", true);
             $('#veg').prop("disabled", true);
+            $('#veg2').prop("disabled", true);
+            $('#senstives').css("opacity", "0.5");
+            $('#glutenTitle').css("opacity", "0.5");
+            $('#vegTitle').css("opacity", "0.5");
+            $('#vegTitle2').css("opacity", "0.5");
+            $('#otherRestriction').css("opacity", "0.5");
+            $('#faBus').css("opacity", "0.5");
+            $('#faUsers').css("opacity", "0.5");
+            $('#faUsers').prop("disabled", true);
             $('#otherRestriction').prop("disabled", true);
             $('#numOfPeople').val("0");
+            $('#bus').prop("disabled", true);
+            $('#bus').empty();
+            $('#bus').append('<option hidden selected disabled value="">אנשים שצריכים הסעה</option>');
+            $('#bus').append('<option value="' + 0 + '">' + 0 + '</option>');
             $('#bus').val("0");
+
         } else {
             $('#numOfPeople').prop("disabled", false);
             $('#bus').prop("disabled", true);
             $('#gluten').prop("disabled", false);
             $('#veg').prop("disabled", false);
+            $('#veg2').prop("disabled", false);
             $('#otherRestriction').prop("disabled", false);
+            $('#faBus').css("opacity", "0.5");
+            $('#faUsers').css("opacity", "1");
+            $('#senstives').css("opacity", "1");
+            $('#glutenTitle').css("opacity", "1");
+            $('#vegTitle').css("opacity", "1");
+            $('#vegTitle2').css("opacity", "1");
+            $('#otherRestriction').css("opacity", "1");
             $('#numOfPeople').val("");
             $('#bus').val("");
         }
@@ -230,13 +256,14 @@ $(document).ready(function () {
         e.preventDefault();
         var data = $(this).serialize();
 
-        $('#alert-wrapper').html(alert_markup('info', '<strong style="direction: rtl">שנייה</strong> שומרים את הנתונים..'));
+        $('#alert-wrapper').html(alert_markup('info', '.<strong style="direction: rtl">שנייה</strong> ...שומרים את הנתונים'));
         $('#name').prop("disabled", true);
         $('#phone').prop("disabled", true);
         $('#numOfPeople').prop("disabled", true);
         $('#bus').prop("disabled", true);
         $('#gluten').prop("disabled", true);
         $('#veg').prop("disabled", true);
+        $('#veg2').prop("disabled", true);
         $('#otherRestriction').prop("disabled", true);
         $('#approve').prop("disabled", true);
             $.post('https://script.google.com/macros/s/AKfycbxDVil7Pnnat_k8gJ7nd6JvH1xb2e5BbZZoLRqJtwHtHpvh-6w/exec', data)
@@ -248,6 +275,7 @@ $(document).ready(function () {
                     $('#bus').prop("disabled", false);
                     $('#gluten').prop("disabled", false);
                     $('#veg').prop("disabled", false);
+                    $('#veg2').prop("disabled", false);
                     $('#otherRestriction').prop("disabled", false);
                     $('#approve').prop("disabled", false);
                     if (data.result === "error") {
@@ -255,12 +283,13 @@ $(document).ready(function () {
                     } else {
                         $('#name').val("");
                         $('#phone').val("");
-                        $('#numOfPeople').val("");
-                        $('#bus').val("");
+                        $('#numOfPeople').val("0");
+                        $('#bus').val("0");
                         $('input[type="radio"]').prop('checked', false);
                         $('#otherRestriction').val("");
                         $('#gluten').prop("checked", false);
                         $('#veg').prop("checked", false);
+                        $('#veg2').prop("checked", false);
                         $('#alert-wrapper').html('');
                         $('#rsvp-modal').modal('show');
                     }
@@ -272,6 +301,7 @@ $(document).ready(function () {
                     $('#bus').prop("disabled", false);
                     $('#gluten').prop("disabled", false);
                     $('#veg').prop("disabled", false);
+                    $('#veg2').prop("disabled", false);
                     $('#otherRestriction').prop("disabled", false);
                     $('#approve').prop("disabled", false);
                     console.log(data);
