@@ -205,9 +205,10 @@ $(document).ready(function () {
 
     /********************** Radio selection ***********/
     var radios = document.querySelectorAll('input[type=radio][name="isComing"]');
-
+    var selectedRadio;
     function changeHandler(event) {
         if ( this.value === 'no' ) {
+            selectedRadio = false;
             $('#numOfPeople').prop("disabled", true);
             $('#bus').prop("disabled", true);
             $('#gluten').prop("disabled", true);
@@ -230,6 +231,7 @@ $(document).ready(function () {
             $('#bus').val("0");
 
         } else {
+            selectedRadio = true;
             $('#numOfPeople').prop("disabled", false);
             $('#bus').prop("disabled", true);
             $('#gluten').prop("disabled", false);
@@ -255,7 +257,7 @@ $(document).ready(function () {
     $('#rsvp-form').on('submit', function (e) {
         e.preventDefault();
         var data = $(this).serialize();
-
+        console.log($(this));
         $('#alert-wrapper').html(alert_markup('info', '.<strong style="direction: rtl">שנייה</strong> ...שומרים את הנתונים'));
         $('#name').prop("disabled", true);
         $('#phone').prop("disabled", true);
@@ -266,7 +268,8 @@ $(document).ready(function () {
         $('#veg2').prop("disabled", true);
         $('#otherRestriction').prop("disabled", true);
         $('#approve').prop("disabled", true);
-            $.post('https://script.google.com/macros/s/AKfycbxDVil7Pnnat_k8gJ7nd6JvH1xb2e5BbZZoLRqJtwHtHpvh-6w/exec', data)
+        $('#approve').css("opacity", "0.5");
+            $.post('https://script.google.com/macros/s/AKfycbxDVil7Pnnat_k8gJ7nd6JvH1xb2e5BbZZoLRqJtwHtHpvh-62w/exec', data)
                 .done(function (data) {
                     console.log(data);
                     $('#name').prop("disabled", false);
@@ -278,8 +281,13 @@ $(document).ready(function () {
                     $('#veg2').prop("disabled", false);
                     $('#otherRestriction').prop("disabled", false);
                     $('#approve').prop("disabled", false);
+
+
                     if (data.result === "error") {
                         $('#alert-wrapper').html(alert_markup('danger', data.message));
+                        setTimeout(function() {
+                            $('#alert-wrapper').html('');
+                        }, 4000);
                     } else {
                         $('#name').val("");
                         $('#phone').val("");
@@ -290,9 +298,19 @@ $(document).ready(function () {
                         $('#gluten').prop("checked", false);
                         $('#veg').prop("checked", false);
                         $('#veg2').prop("checked", false);
+                        if(!selectedRadio) {
+                            $('#happy').html('');
+                            $('#happy').html( '<div style="white-space: pre-line">מבינים את המצב, מוזמנים להכנס לכאן שוב ביום החתונה <span style="white-space: pre-line"">על מנת לצפות בטקס החופה בלייב</span></div>')
+                        } else {
+                                $('#happy').html('');
+                                $('#happy').html( '<div style="white-space: pre-line">שמחים ומתרגשים לראות אותך ביום הגדול שלנו</div>')
+                        }
                         $('#alert-wrapper').html('');
+
                         $('#rsvp-modal').modal('show');
                     }
+                    $('#approve').css("opacity", "1");
+
                 })
                 .fail(function (data) {
                     $('#name').prop("disabled", false);
@@ -304,8 +322,12 @@ $(document).ready(function () {
                     $('#veg2').prop("disabled", false);
                     $('#otherRestriction').prop("disabled", false);
                     $('#approve').prop("disabled", false);
+                    $('#approve').css("opacity", "1");
                     console.log(data);
                     $('#alert-wrapper').html(alert_markup('danger', '<strong style="direction: rtl">מצטערים!</strong> קרתה שגיאה '));
+                    setTimeout(function() {
+                        $('#alert-wrapper').html('');
+                    }, 4000);
                 });
 
     });
