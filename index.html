@@ -141,12 +141,16 @@
                       method="POST">
                     <div class="row" style="direction: rtl; display: flex; justify-content: space-around">
                         <div class="col-md-6 col-sm-6">
-                            <input type="radio" id="coming" name="isComing" value="yes" required>
-                            <label for="coming"> מגיע</label>
+                            <label class="radio-container">מגיע
+                                <input type="radio" id="coming" name="isComing" value="yes" required>
+                                <span class="checkmark"></span>
+                            </label>
                         </div>
                         <div class="col-md-6 col-sm-6">
-                            <input type="radio" id="notComing" name="isComing" value="no">
-                            <label for="notComing">לא מגיע</label>
+                            <label class="radio-container">לא מגיע
+                                <input type="radio" id="notComing" name="isComing" value="no">
+                                <span class="checkmark"></span>
+                            </label>
                         </div>
                     </div>
                     <div class="row">
@@ -218,18 +222,27 @@
 
                     <div class="row" style="direction: rtl; padding-top:15px; display: flex; justify-content: space-around">
                         <div class="col-md-2 col-sm-2" id="senstives"><strong>רגישויות</strong></div>
-
                         <div class="col-md-4 col-sm-4">
+                        <label class="checkbox-container" id="glutenTitle">גלוטן
                             <input type="checkbox" id="gluten" name="gluten" value="yes" style="vertical-align: text-top">
-                            <label for="gluten" id="glutenTitle">גלוטן</label>
+                            <span class="checkboxmark"></span>
+                        </label>
+                        </div>
+<!--                        <div class="col-md-4 col-sm-4">-->
+<!--                            <input type="checkbox" id="gluten" name="gluten" value="yes" style="vertical-align: text-top">-->
+<!--                            <label for="gluten" id="glutenTitle">גלוטן</label>-->
+<!--                        </div>-->
+                        <div class="col-md-4 col-sm-4">
+                            <label class="checkbox-container" id="vegTitle">צמחוני
+                                <input type="checkbox" id="veg" name="veg" value="yes" style="vertical-align: text-top">
+                                <span class="checkboxmark"></span>
+                            </label>
                         </div>
                         <div class="col-md-4 col-sm-4">
-                            <input type="checkbox" id="veg" name="veg" value="yes" style="vertical-align: text-top">
-                            <label for="veg" id="vegTitle"> צמחוני</label>
-                        </div>
-                        <div class="col-md-4 col-sm-4">
-                            <input type="checkbox" id="veg2" name="veg2" value="yes" style="vertical-align: text-top">
-                            <label for="veg" id="vegTitle2"> טבעוני</label>
+                            <label class="checkbox-container" id="vegTitle2">טבעוני
+                                <input type="checkbox" id="veg2" name="veg2" value="yes" style="vertical-align: text-top">
+                                <span class="checkboxmark"></span>
+                            </label>
                         </div>
                     <div class="col-md-4 col-sm-4">
                         <input type="text" pattern="[א-ת|\s]+" name="otherRestriction" class="" id="otherRestriction"
