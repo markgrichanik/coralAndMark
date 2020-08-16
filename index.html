@@ -181,7 +181,6 @@
                                 <span style="padding-right: 68px;">
                                     <select name="numOfPeople" id="numOfPeople" required>
                                     <option hidden value="" selected disabled>כמה מגיעים?</option>
-                                    <option value="0">0</option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
                                     <option value="3">3</option>
@@ -202,7 +201,7 @@
 <!--                        <div class="clearfix visible-xs-block"></div>-->
 
                         <div class="col-md-6 col-sm-6 col-xs-12 col-sm-pull-6">
-                            <div class="form-input-group"  style="direction: rtl">
+                            <div class="form-input-group"  style="direction: rtl; margin: 0">
                                 <i id="faBus" class="fa fa-bus"></i>
                                 <span style="padding-right: 68px;"><select name="bus" id="bus" required disabled>
                                     <option hidden value="" selected disabled>כמה בהסעה?</option>
@@ -220,9 +219,9 @@
                     </div>
 
 
-                    <div class="row" style="direction: rtl; padding-top:15px; display: flex; justify-content: space-around">
-                        <div class="col-md-2 col-sm-2" id="senstives"><strong>רגישויות</strong></div>
-                        <div class="col-md-4 col-sm-4">
+                    <div class="row" style="direction: rtl; display: inline-flex; justify-content: center; flex-flow: wrap ">
+                        <div class="col-md-2 col-sm-2 col-xs-12" id="senstives" style=" padding-bottom: 12px; "><strong>רגישויות</strong></div>
+                        <div class="col-md-2 col-sm-2 col-xs-12">
                         <label class="checkbox-container" id="glutenTitle">גלוטן
                             <input type="checkbox" id="gluten" name="gluten" value="yes" style="vertical-align: text-top">
                             <span class="checkboxmark"></span>
@@ -232,19 +231,19 @@
 <!--                            <input type="checkbox" id="gluten" name="gluten" value="yes" style="vertical-align: text-top">-->
 <!--                            <label for="gluten" id="glutenTitle">גלוטן</label>-->
 <!--                        </div>-->
-                        <div class="col-md-4 col-sm-4">
+                        <div class="col-md-2 col-sm-2 col-xs-12">
                             <label class="checkbox-container" id="vegTitle">צמחוני
                                 <input type="checkbox" id="veg" name="veg" value="yes" style="vertical-align: text-top">
                                 <span class="checkboxmark"></span>
                             </label>
                         </div>
-                        <div class="col-md-4 col-sm-4">
+                        <div class="col-md-2 col-sm-2 col-xs-12">
                             <label class="checkbox-container" id="vegTitle2">טבעוני
                                 <input type="checkbox" id="veg2" name="veg2" value="yes" style="vertical-align: text-top">
                                 <span class="checkboxmark"></span>
                             </label>
                         </div>
-                    <div class="col-md-4 col-sm-4">
+                    <div class="col-md-4 col-sm-4 col-xs-6">
                         <input type="text" pattern="[א-ת|\s]+" name="otherRestriction" class="" id="otherRestriction"
                                style="width: 100%"
                                maxlength="50"

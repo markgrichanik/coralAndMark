@@ -3,32 +3,32 @@ $(document).ready(function () {
     /***************** Waypoints ******************/
 
     $('.wp1').waypoint(function () {
-        $('.wp1').addClass('animated fadeInLeft');
+        $('.wp1').addClass('animated fadeInRight');
     }, {
         offset: '75%'
     });
     $('.wp2').waypoint(function () {
-        $('.wp2').addClass('animated fadeInRight');
+        $('.wp2').addClass('animated fadeInLeft');
     }, {
         offset: '75%'
     });
     $('.wp3').waypoint(function () {
-        $('.wp3').addClass('animated fadeInLeft');
+        $('.wp3').addClass('animated fadeInRight');
     }, {
         offset: '75%'
     });
     $('.wp4').waypoint(function () {
-        $('.wp4').addClass('animated fadeInRight');
+        $('.wp4').addClass('animated fadeInLeft');
     }, {
         offset: '75%'
     });
     $('.wp5').waypoint(function () {
-        $('.wp5').addClass('animated fadeInLeft');
+        $('.wp5').addClass('animated fadeInRight');
     }, {
         offset: '75%'
     });
     $('.wp6').waypoint(function () {
-        $('.wp6').addClass('animated fadeInRight');
+        $('.wp6').addClass('animated fadeInLeft');
     }, {
         offset: '75%'
     });
@@ -38,12 +38,12 @@ $(document).ready(function () {
         offset: '75%'
     });
     $('.wp8').waypoint(function () {
-        $('.wp8').addClass('animated fadeInLeft');
+        $('.wp8').addClass('animated fadeInRight');
     }, {
         offset: '75%'
     });
     $('.wp9').waypoint(function () {
-        $('.wp9').addClass('animated fadeInRight');
+        $('.wp9').addClass('animated fadeInLeft');
     }, {
         offset: '75%'
     });
@@ -214,6 +214,10 @@ $(document).ready(function () {
             $('#gluten').prop("disabled", true);
             $('#veg').prop("disabled", true);
             $('#veg2').prop("disabled", true);
+            $('#otherRestriction').val("");
+            $('#gluten').prop("checked", false);
+            $('#veg').prop("checked", false);
+            $('#veg2').prop("checked", false);
             $('#senstives').css("opacity", "0.5");
             $('#glutenTitle').css("opacity", "0.5");
             $('#vegTitle').css("opacity", "0.5");
@@ -269,7 +273,7 @@ $(document).ready(function () {
         $('#otherRestriction').prop("disabled", true);
         $('#approve').prop("disabled", true);
         $('#approve').css("opacity", "0.5");
-            $.post('https://script.google.com/macros/s/AKfycbxDVil7Pnnat_k8gJ7nd6JvH1xb2e5BbZZoLRqJtwHtHpvh-62w/exec', data)
+            $.post('https://script.google.com/macros/s/AKfycbxDVil7Pnnat_k8gJ7nd6JvH1xb2e5BbZZoLRqJtwHtHpvh-6w/exec', data)
                 .done(function (data) {
                     console.log(data);
                     $('#name').prop("disabled", false);
@@ -291,8 +295,9 @@ $(document).ready(function () {
                     } else {
                         $('#name').val("");
                         $('#phone').val("");
-                        $('#numOfPeople').val("0");
-                        $('#bus').val("0");
+                        $('#numOfPeople').val("");
+                        $('#bus').val("");
+                        $('#bus').prop("disabled", true);
                         $('input[type="radio"]').prop('checked', false);
                         $('#otherRestriction').val("");
                         $('#gluten').prop("checked", false);
