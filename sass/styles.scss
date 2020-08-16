@@ -822,6 +822,7 @@ RSVP form
     input::placeholder {
       color: $form-placeholder
     }
+
     .form-input-group {
       width: 100%;
       height: 55px;
@@ -906,6 +907,7 @@ RSVP form
         color: $form-placeholder
       }
     }
+
   }
 }
 
@@ -1034,6 +1036,7 @@ Checkbox / radio button
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  min-width: 88px;
 }
 
 /* Hide the browser's default checkbox */
