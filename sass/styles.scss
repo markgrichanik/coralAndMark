@@ -835,7 +835,7 @@ RSVP form
       position: relative;
 
       i {
-        color: $accent-color;
+        color: #ffdf7c;
         font-size: 14px;
       }
       i:after {
@@ -999,7 +999,7 @@ Checkbox / radio button
 
 /* When the radio button is checked, add a blue background */
 .radio-container input:checked ~ .checkmark {
-  background-color: $accent-color;
+  background-color: #ffdf7c;
 }
 
 /* Create the indicator (the dot/circle - hidden when not checked) */
@@ -1066,7 +1066,7 @@ Checkbox / radio button
 
 /* When the checkbox is checked, add a blue background */
 .checkbox-container input:checked ~ .checkboxmark {
-  background-color: $accent-color;
+  background-color: #ffdf7c;
 }
 
 /* Create the checkmark/indicator (hidden when not checked) */
