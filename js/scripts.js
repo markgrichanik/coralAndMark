@@ -227,12 +227,12 @@ $(document).ready(function () {
             $('#faUsers').css("opacity", "0.5");
             $('#faUsers').prop("disabled", true);
             $('#otherRestriction').prop("disabled", true);
-            $('#numOfPeople').val("0");
+            $('#numOfPeople').val("");
             $('#bus').prop("disabled", true);
             $('#bus').empty();
             $('#bus').append('<option hidden selected disabled value="">אנשים שצריכים הסעה</option>');
             $('#bus').append('<option value="' + 0 + '">' + 0 + '</option>');
-            $('#bus').val("0");
+            // $('#bus').val("0");
 
         } else {
             selectedRadio = true;
@@ -285,8 +285,6 @@ $(document).ready(function () {
                     $('#veg2').prop("disabled", false);
                     $('#otherRestriction').prop("disabled", false);
                     $('#approve').prop("disabled", false);
-
-
                     if (data.result === "error") {
                         $('#alert-wrapper').html(alert_markup('danger', data.message));
                         setTimeout(function() {
