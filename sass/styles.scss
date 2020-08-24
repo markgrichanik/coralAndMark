@@ -967,8 +967,26 @@ Presents form
       .fa-gift {
         font-size: 20px;
       }
+      .fa-ils:after {
+        content: "";
+        height: 30px;
+        width: 1px;
+        border-left: solid 1px $keyline-color;
+        position: absolute;
+        top: 50%;
+        left: 30px;
+        right: auto;
+        transform: translateY(-50%);
+      }
+      i.fa-ils {
+        font-size: 20px;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+      }
       input {
         padding-right: 68px;
+        padding-left: 68px;
         width: 100%;
         height: 100%;
         -moz-border-radius: 6px;

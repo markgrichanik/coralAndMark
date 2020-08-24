@@ -39,7 +39,6 @@
 <script src="js/jquery.fancybox.pack.js"></script>
 <script src="js/vendor/bootstrap.min.js"></script>
 <script src="js/jquery.flexslider-min.js"></script>
-<script src="js/jquery.maskMoney.min.js"></script>
 <script src="js/jquery.mb.YTPlayer.min.js"></script>
 <script src="node_modules/waypoints/lib/jquery.waypoints.min.js"></script>
 <script src="js/vendor/ouical.js"></script>
@@ -433,21 +432,17 @@
                       action=""
                       method="POST">
                     <div class="row"  style="direction: rtl; display: flex; justify-content: center">
-                        <div class="col-md-3">
+                        <div class="col-md-3 col-sm-4 col-lg-2 col-xs-6">
                             <div class="form-input-group"  style="direction: rtl">
                                 <i class="fa fa-gift" ></i> <input type="text" name="presentAmount" class="" id="presentAmount"
                                                                    placeholder="סכום"
-                                                                   required>
+                                                                   required>   <i class="fa fa-ils" style="left: 20px" ></i>
 
                             </div>
                         </div>
 
                     </div>
-                    <script>
-                        $(function() {
-                            $('#presentAmount').maskMoney({prefix: '₪', precision:0});
-                        })
-                    </script>
+
 
                     <div class="row">
                         <div class="col-md-12" id="present-alert-wrapper"></div>
@@ -471,7 +466,7 @@
                                 return actions.order.create({
                                     purchase_units: [{
                                         amount: {
-                                            value: $('#presentAmount').val().slice(1)
+                                            value: $('#presentAmount').val()
                                         }
                                     }]
                                 });

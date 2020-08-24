@@ -258,7 +258,7 @@ $(document).ready(function () {
         radio.addEventListener('change', changeHandler);
     });
     $('#presentAmount').on("keyup", function(even) {
-        if($('#presentAmount').val() && $('#presentAmount').val().slice(1) !== '0'){
+        if($('#presentAmount').val() && $('#presentAmount').val() !== '0'){
             $('#paypal-button-container').removeClass('disabled-overlay');
         } else {
             $('#paypal-button-container').addClass('disabled-overlay');
