@@ -257,11 +257,18 @@ $(document).ready(function () {
     Array.prototype.forEach.call(radios, function(radio) {
         radio.addEventListener('change', changeHandler);
     });
+    $('#presentAmount').on("keyup", function(even) {
+        if($('#presentAmount').val() && $('#presentAmount').val().slice(1) !== '0'){
+            $('#paypal-button-container').removeClass('disabled-overlay');
+        } else {
+            $('#paypal-button-container').addClass('disabled-overlay');
+
+        }
+    });
     /********************** RSVP **********************/
     $('#rsvp-form').on('submit', function (e) {
         e.preventDefault();
         var data = $(this).serialize();
-        console.log($(this));
         $('#alert-wrapper').html(alert_markup('info', '.<strong style="direction: rtl">שנייה</strong> ...שומרים את הנתונים'));
         $('#name').prop("disabled", true);
         $('#phone').prop("disabled", true);

@@ -912,6 +912,132 @@ RSVP form
 }
 
 /* ==========================================================================
+Presents form
+========================================================================== */
+.presents {
+  .present-form {
+    .rsvp-btn {
+      padding: 15px 0;
+      border-radius: 3px;
+      width: 100%;
+      font-size: 20px;
+      margin-top: 10px;
+    }
+    #otherRestriction {
+      border: none;
+      border-bottom: 1px solid #b5b5b5;
+    }
+
+
+    input::-webkit-input-placeholder {
+      color: $form-placeholder;
+    }
+    input::-moz-placeholder {
+      color: $form-placeholder;
+    }
+    input::-moz-placeholder {
+      color: $form-placeholder;
+    }
+    input::-ms-input-placeholder {
+      color: $form-placeholder;
+    }
+    input::placeholder {
+      color: $form-placeholder
+    }
+
+    .form-input-group {
+      width: 100%;
+      height: 55px;
+      margin: 0 auto 10px;
+      -moz-border-radius: 5px;
+      -webkit-border-radius: 5px;
+      border-radius: 5px;
+      border: solid 1px $keyline-color;
+      text-align: right;
+      position: relative;
+
+      i {
+        color: #ffdf7c;
+        font-size: 14px;
+      }
+      i:after {
+        content: "";
+        height: 30px;
+        width: 1px;
+        border-left: solid 1px $keyline-color;
+        position: absolute;
+        top: 50%;
+        right: 30px;
+        transform: translateY(-50%);
+      }
+      i.fa-user, i.fa-users, i.fa-envelope, i.fa-phone, i.fa-bus, .fa-key, .fa-gift {
+        font-size: 14px;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        margin-right: 20px;
+      }
+      .fa-gift {
+        font-size: 20px;
+      }
+      select {
+        //padding-right: 68px;
+        height: 100%;
+        -moz-border-radius: 6px;
+        -webkit-border-radius: 6px;
+        border-radius: 6px;
+        border: none;
+        color: $form-placeholder;
+        background-color: transparent;
+      }
+
+      select::-webkit-input-placeholder {
+        color: $form-placeholder;
+      }
+      select::-moz-placeholder {
+        color: $form-placeholder;
+      }
+      select::-moz-placeholder {
+        color: $form-placeholder;
+      }
+      select::-ms-input-placeholder {
+        color: $form-placeholder;
+      }
+      select::placeholder {
+        color: $form-placeholder;
+      }
+      input {
+        padding-right: 68px;
+        width: 100%;
+        height: 100%;
+        -moz-border-radius: 6px;
+        -webkit-border-radius: 6px;
+        border-radius: 6px;
+        border: none;
+      }
+
+      input::-webkit-input-placeholder {
+        color: $form-placeholder;
+      }
+      input::-moz-placeholder {
+        color: $form-placeholder;
+      }
+      input::-moz-placeholder {
+        color: $form-placeholder;
+      }
+      input::-ms-input-placeholder {
+        color: $form-placeholder;
+      }
+      input::placeholder {
+        color: $form-placeholder
+      }
+    }
+
+  }
+}
+
+
+/* ==========================================================================
 Footer
 ========================================================================== */
 footer {
@@ -1092,4 +1218,19 @@ Checkbox / radio button
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
+}
+.disabled-overlay {
+  position: relative;
+  margin-bottom: -8px;
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    opacity: .3;
+    z-index: 1000;
+  }
 }
