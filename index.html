@@ -46,7 +46,7 @@
 <script src="js/scripts.min.js"></script>
 <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAAxiEigI2TiArad6p2vaZ7ym5qTRpUOIs&language=iw&callback=initMap"></script>
-<script src="https://www.paypal.com/sdk/js?client-id=ATguZCqUaOvBPz3Id1_yJyvmlVWNeduhW2Rfb45lTbNdUb34a9CU2_P49P6UI9GXsiDDl7qATNr9ED_I&currency=ILS" data-sdk-integration-source="button-factory"></script>
+<script src="https://www.paypal.com/sdk/js?client-id=ATguZCqUaOvBPz3Id1_yJyvmlVWNeduhW2Rfb45lTbNdUb34a9CU2_P49P6UI9GXsiDDl7qATNr9ED_I&currency=ILS&locale=he_IL" data-sdk-integration-source="button-factory"></script>
 
 <!-- Google Analytics -->
 <script>
@@ -481,6 +481,10 @@
                                     $('#presents-modal').modal('show');
                                     $('#presentAmount').val("");
                                 });
+                            },
+                            onCancel: function(data) {
+                                $('#presentAmount').val("");
+                                $('#paypal-button-container').addClass('disabled-overlay');
                             },
                             onError: function (err) {
                                 $('#presents-error-modal').modal('show');

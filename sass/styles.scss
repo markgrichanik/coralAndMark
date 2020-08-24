@@ -916,19 +916,6 @@ Presents form
 ========================================================================== */
 .presents {
   .present-form {
-    .rsvp-btn {
-      padding: 15px 0;
-      border-radius: 3px;
-      width: 100%;
-      font-size: 20px;
-      margin-top: 10px;
-    }
-    #otherRestriction {
-      border: none;
-      border-bottom: 1px solid #b5b5b5;
-    }
-
-
     input::-webkit-input-placeholder {
       color: $form-placeholder;
     }
@@ -980,32 +967,6 @@ Presents form
       .fa-gift {
         font-size: 20px;
       }
-      select {
-        //padding-right: 68px;
-        height: 100%;
-        -moz-border-radius: 6px;
-        -webkit-border-radius: 6px;
-        border-radius: 6px;
-        border: none;
-        color: $form-placeholder;
-        background-color: transparent;
-      }
-
-      select::-webkit-input-placeholder {
-        color: $form-placeholder;
-      }
-      select::-moz-placeholder {
-        color: $form-placeholder;
-      }
-      select::-moz-placeholder {
-        color: $form-placeholder;
-      }
-      select::-ms-input-placeholder {
-        color: $form-placeholder;
-      }
-      select::placeholder {
-        color: $form-placeholder;
-      }
       input {
         padding-right: 68px;
         width: 100%;
@@ -1014,22 +975,6 @@ Presents form
         -webkit-border-radius: 6px;
         border-radius: 6px;
         border: none;
-      }
-
-      input::-webkit-input-placeholder {
-        color: $form-placeholder;
-      }
-      input::-moz-placeholder {
-        color: $form-placeholder;
-      }
-      input::-moz-placeholder {
-        color: $form-placeholder;
-      }
-      input::-ms-input-placeholder {
-        color: $form-placeholder;
-      }
-      input::placeholder {
-        color: $form-placeholder
       }
     }
 
