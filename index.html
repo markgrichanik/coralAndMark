@@ -77,14 +77,13 @@
                         <ul class="primary-nav" style="direction: rtl">
 <!--                            <li style="direction: rtl"><a href="#intro">איך הכרנו?</a></li>-->
                             <li><a href="#events">החתונה שלנו</a></li>
-                            <li style="direction: ltr"><a href="#zoom" ><i class="fa fa-video-camera"></i> Zoom חופה ב</a></li>
                             <li><a href="#eng-pics">תמונות</a></li>
                             <li><a href="#presents">מתנות</a></li>
                             <li style="direction: rtl; padding-right: 25px;"><a href="#instagram">Instagram <i class="fa fa-instagram"></i> </a></li>
                         </ul>
                         <ul class="member-actions">
                             <li><a href="#map" class="login">מיקום החתונה שלנו</a></li>
-                            <li><a href="#rsvp" class="btn-white btn-small">אישור הגעה</a></li>
+                            <li style="direction: ltr"><a href="#presents" class="btn-white btn-small"><i class="fa fa-video-camera"></i> Zoom חופה ב</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -104,213 +103,25 @@
         </div>
         <div class="row">
             <div class="col-sm-4 "></div>
-            <div class="col-sm-4  text-center"><a href="#rsvp"
-                                                           class="btn btn-accent btn-large rsvp-btn">לאישור הגעה לחץ כאן</a></div>
+            <div class="col-sm-4  text-center"><a href="#presents"
+                                                           class="btn btn-accent btn-large rsvp-btn" style="direction: rtl">לחופה בZoom לחץ כאן</a></div>
             <div class="col-sm-4 "></div>
         </div>
     </div>
-    <div class="down-arrow floating-arrow"><a href="#invitation"><i class="fa fa-angle-down"></i></a></div>
+    <div class="down-arrow floating-arrow"><a href="#events"><i class="fa fa-angle-down"></i></a></div>
 </section>
 
-<section class="rsvp text-center" id="rsvp">
-
-    <div id="rsvp-modal" class="modal fade" tabindex="-1" role="dialog">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span>&times;</span>
-                    </button>
-                    <div class="section-padding">
-                        <h3 style="direction: rtl">תודה רבה!</h3>
-                        <p id="happy">שמחים ומתרגשים לראות אותך ביום הגדול שלנו</p>
-                        <p>ניתן יהיה להשאיר מתנה גם באתר ביום האירוע (באמצעות אשראי)</p>
-                        <div id="add-to-cal"></div>
-                    </div>
-                </div>
-            </div><!-- /.modal-content -->
-        </div><!-- /.modal-dialog -->
-    </div><!-- /.modal -->
-
-    <div id="presents-modal" class="modal fade" tabindex="-1" role="dialog">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span>&times;</span>
-                    </button>
-                    <div class="section-padding">
-                        <h3 style="direction: rtl">תודה רבה!</h3>
-                    </div>
-                </div>
-            </div><!-- /.modal-content -->
-        </div><!-- /.modal-dialog -->
-    </div><!-- /.modal -->
-    <div id="presents-error-modal" class="modal fade" tabindex="-1" role="dialog">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span>&times;</span>
-                    </button>
-                    <div class="section-padding">
-                        <h3 style="direction: rtl">קרתה שגיאה, בבקשה נסה שנית</h3>
-                    </div>
-                </div>
-            </div><!-- /.modal-content -->
-        </div><!-- /.modal-dialog -->
-    </div><!-- /.modal -->
-
-    <div class="container" style="padding-top:15px">
-        <div class="row">
-            <div class="col-md-12">
-                <h3 style="direction: rtl">מלאו את הפרטים לאישור הגעה</h3>
-                <p>
-                <h4 style="white-space: pre-line">גם אם לא תוכלו להגיע נשמח שתמלאו את הפרטים ותציינו שלא מגיעים</h4>
-                <h4 style="white-space: pre-line">בהתאם להנחיות לא יהיו ריקודים ברחבה</h4>
-                </p>
-
-                <form id="rsvp-form" class="gform rsvp-form"
-                      action=""
-                      method="POST">
-                    <div class="row" style="direction: rtl; display: flex; justify-content: space-around">
-                        <div class="col-md-6 col-sm-6">
-                            <label class="radio-container">מגיע
-                                <input type="radio" id="coming" name="isComing" value="yes" required>
-                                <span class="checkmark"></span>
-                            </label>
-                        </div>
-                        <div class="col-md-6 col-sm-6">
-                            <label class="radio-container">לא מגיע
-                                <input type="radio" id="notComing" name="isComing" value="no">
-                                <span class="checkmark"></span>
-                            </label>
-                        </div>
-                    </div>
-                    <div class="row">
-
-                        <div class="col-md-6 col-sm-6 col-xs-12 col-sm-push-6"  >
-                            <div class="form-input-group"  style="direction: rtl">
-                                <i class="fa fa-user" ></i> <input type="text" name="name" class="" id="name"
-                                                                 placeholder="שם מלא"
-                                                                 required>
-
-                            </div>
-                        </div>
-
-                        <div class="col-md-6 col-sm-6 col-xs-12 col-sm-pull-6">
-                            <div class="form-input-group"  style="direction: rtl">
-                                <i class="fa fa-phone"></i><input type="text" pattern="\d*" name="phone" class="" id="phone"
-                                                                  maxlength="10"
-                                                                  placeholder="טלפון"
-                                                                  required>
-                            </div>
-                        </div>
-
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6 col-sm-6 col-xs-12  col-sm-push-6">
-                            <div class="form-input-group"  style="direction: rtl">
-                                <i id="faUsers" class="fa fa-users"></i>
-                                <span style="padding-right: 68px;">
-                                    <select name="numOfPeople" id="numOfPeople" required>
-                                    <option hidden value="" selected disabled>כמה מגיעים?</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5</option>
-                                    <option value="6">6</option>
-                                    <option value="7">7</option>
-                                    <option value="8">8</option>
-                                    <option value="9">9</option>
-                                </select></span>
-                                <!--                                <input type="number" name="numOfPeople" class="" min="0"-->
-                                <!--                                                                  max="4"-->
-                                <!--                                                                  id="numOfPeople"-->
-                                <!--                                                                  placeholder="מספר אנשים"-->
-                                <!--                                                                  required>-->
-                            </div>
-                        </div>
-<!--                        <div class="clearfix visible-xs-block"></div>-->
-
-                        <div class="col-md-6 col-sm-6 col-xs-12 col-sm-pull-6">
-                            <div class="form-input-group"  style="direction: rtl; margin: 0">
-                                <i id="faBus" class="fa fa-bus"></i>
-                                <span style="padding-right: 68px;"><select name="bus" id="bus" required disabled>
-                                    <option hidden value="" selected disabled>כמה בהסעה?</option>
-                                </select>
-                                    </span>
-<!--                                <input type="number" name="bus" class="" min="0"-->
-<!--                                                                max="2"-->
-<!--                                                                id="bus"-->
-<!--                                                                placeholder="מספר אנשים שצריכים הסעה"-->
-<!--                                                                required>-->
-
-                            </div>
-                        </div>
-
-                    </div>
-
-
-                    <div class="row" style="direction: rtl; display: inline-flex; justify-content: center; flex-flow: wrap ">
-                        <div class="col-md-2 col-sm-2 col-xs-12" id="senstives" style=" padding-bottom: 12px; "><strong>רגישויות</strong></div>
-                        <div class="col-md-2 col-sm-2 col-xs-12">
-                        <label class="checkbox-container" id="glutenTitle">גלוטן
-                            <input type="checkbox" id="gluten" name="gluten" value="yes" style="vertical-align: text-top">
-                            <span class="checkboxmark"></span>
-                        </label>
-                        </div>
-<!--                        <div class="col-md-4 col-sm-4">-->
-<!--                            <input type="checkbox" id="gluten" name="gluten" value="yes" style="vertical-align: text-top">-->
-<!--                            <label for="gluten" id="glutenTitle">גלוטן</label>-->
-<!--                        </div>-->
-                        <div class="col-md-2 col-sm-2 col-xs-12">
-                            <label class="checkbox-container" id="vegTitle">צמחוני
-                                <input type="checkbox" id="veg" name="veg" value="yes" style="vertical-align: text-top">
-                                <span class="checkboxmark"></span>
-                            </label>
-                        </div>
-                        <div class="col-md-2 col-sm-2 col-xs-12">
-                            <label class="checkbox-container" id="vegTitle2">טבעוני
-                                <input type="checkbox" id="veg2" name="veg2" value="yes" style="vertical-align: text-top">
-                                <span class="checkboxmark"></span>
-                            </label>
-                        </div>
-                    <div class="col-md-4 col-sm-4 col-xs-6">
-                        <input type="text" pattern="[א-ת|\s]+" name="otherRestriction" class="" id="otherRestriction"
-                               style="width: 100%"
-                               maxlength="50"
-                               placeholder="אחר"
-                        >
-                    </div>
-
-                    </div>
-
-
-                    <div class="row">
-                        <div class="col-md-12" id="alert-wrapper"></div>
-                    </div>
-                    <div class="row" style="direction: rtl; float:right; padding-right: 15px; padding-top: 10px; white-space: pre-line">
-                        *ההסעות יצאו מהגרנד קניון בבאר שבע בשעה 16:30 ויעברו ב16:45 מול מרכז מורים.
-                    </div>
-
-                    <button class="btn-fill rsvp-btn" style="direction: rtl" id="approve">
-                       שליחה
-                    </button>
-                </form>
-            </div>
-        </div>
-    </div>
-</section>
-<section id="invitation" class="section-padding">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12 text-center">
-                <h3>עומדים להתחתן</h3>
-                <p ><h4 style="direction: rtl">בתאריך 7 לספטמבר 2020 ורוצים שתהיו חלק מהחגיגה!</h4></p>
-                <div class="share-bar"></div>
-            </div>
-        </div>
-    </div>
-</section>
+<!--<section id="invitation" class="section-padding">-->
+<!--    <div class="container">-->
+<!--        <div class="row">-->
+<!--            <div class="col-md-12 text-center">-->
+<!--                <h3>עומדים להתחתן</h3>-->
+<!--                <p ><h4 style="direction: rtl">בתאריך 7 לספטמבר 2020 ורוצים שתהיו חלק מהחגיגה!</h4></p>-->
+<!--                <div class="share-bar"></div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</section>-->
 
 
 <!--<section id="intro">-->
@@ -350,24 +161,24 @@
             <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="wp3" style="direction: rtl">
                     <h4><strong>07.09.2020</strong></h4>
-                    <h4 style="font-weight: bold">אשקלון, מקום בים </h4>
-                    <h4 style="font-weight: bold"><span>קבלת פנים בשעה 18:00</span></h4>
+<!--                    <h4 style="font-weight: bold">אשקלון, מקום בים </h4>-->
+<!--                    <h4 style="font-weight: bold"><span>קבלת פנים בשעה 18:00</span></h4>-->
                     <h4 style="font-weight: bold"><span class="">חופת <span style="text-decoration: underline; font-size: larger">שקיעה</span> בשעה 18:30</span></h4>
                     <div style="direction: rtl; padding-bottom:5px; padding-top: 5px">
                         <h4>מדובר בחתונת שקיעה ולכן עמידה בזמנים חשובה לנו מאד</h4>
                     </div>
-                    <div style="direction: rtl; padding-bottom:5px">
-                        <h4 class="dance">לנוכח המצב הנוכחי ובהתאם להנחיות משרד הבריאות <span>לא יהיו ריקודים בחתונה</span></h4>
-                    </div>
-                    <div style="direction: rtl; padding-bottom:5px">
-                      <h4 class="dance">נסיים את הטקס בארוחה חגיגית, <span>סומכים עליכם שתעזרו לנו לשמוח <span> גם בלי הריקודים!</span></span></h4>
-                    </div>
-                    <div style="direction: rtl; padding-bottom:5px">
-                        <h4 class="dance"> ניתן יהיה לפנק במתנה גם אונליין באמצעות האשראי ביום האירוע</h4>
-                    </div>
-                    <div style="direction: rtl; padding-bottom:5px">
-                        <h4 class="dance">נא להגיע עם מסכה בהתאם להנחיות</h4>
-                    </div>
+<!--                    <div style="direction: rtl; padding-bottom:5px">-->
+<!--                        <h4 class="dance">לנוכח המצב הנוכחי ובהתאם להנחיות משרד הבריאות <span>לא יהיו ריקודים בחתונה</span></h4>-->
+<!--                    </div>-->
+<!--                    <div style="direction: rtl; padding-bottom:5px">-->
+<!--                      <h4 class="dance">נסיים את הטקס בארוחה חגיגית, <span>סומכים עליכם שתעזרו לנו לשמוח <span> גם בלי הריקודים!</span></span></h4>-->
+<!--                    </div>-->
+<!--                    <div style="direction: rtl; padding-bottom:5px">-->
+<!--                        <h4 class="dance"> ניתן יהיה לפנק במתנה גם אונליין באמצעות האשראי ביום האירוע</h4>-->
+<!--                    </div>-->
+<!--                    <div style="direction: rtl; padding-bottom:5px">-->
+<!--                        <h4 class="dance">נא להגיע עם מסכה בהתאם להנחיות</h4>-->
+<!--                    </div>-->
                 </div>
             </div>
         </div>
@@ -424,6 +235,32 @@
 
 </section>
 <section id="presents" class="presents section-padding">
+    <div id="presents-modal" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-body" style="text-align: center">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span>&times;</span>
+                    </button>
+                    <div class="section-padding">
+                        <h3 style="direction: rtl">תודה רבה!</h3>
+                    </div>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+    <div id="presents-error-modal" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span>&times;</span>
+                    </button>
+                    <div class="section-padding">
+                        <h3 style="direction: rtl">קרתה שגיאה, בבקשה נסה שנית</h3>
+                    </div>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12 text-center">
@@ -447,7 +284,7 @@
                     <div class="row">
                         <div class="col-md-12" id="present-alert-wrapper"></div>
                     </div>
-                    <div id="paypal-button-container"  class="disabled-overlay"></div>
+                    <div id="paypal-button-container"   class="disabled-overlay" style="display: inline-flex"></div>
 
                     <script>
                         paypal.Buttons({
@@ -471,6 +308,7 @@
                                 return actions.order.capture().then(function (details) {
                                     $('#presents-modal').modal('show');
                                     $('#presentAmount').val("");
+                                    $('#paypal-button-container').addClass('disabled-overlay');
                                 });
                             },
                             onCancel: function(data) {
